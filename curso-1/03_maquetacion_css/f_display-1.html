@@ -1,0 +1,67 @@
+<!-- Tipos de display son los tipo de visualizacion que tienen los elementos y que determinan cómo se comportan los elementos 
+     en el diseño de la página, es decir, cómo se posicionan y ocupan espacio en el flujo del documento.
+ 
+    Un primer tipo de display es usando las caracteristicas de los elementos html
+     
+    Block
+    Comportamiento: Los elementos con display: block ocupan todo el ancho disponible, y siempre se dibujan en una nueva línea, 
+    es decir, se apilan verticalmente.
+    Características:
+    - Se extienden horizontalmente para ocupar todo el espacio disponible en su contenedor.
+    - Comienzan en una nueva línea, por lo que los elementos que siguen van a ser renderizados debajo de ellos.
+    - Se puede definir el ancho (width), altura (height), márgenes, y rellenos de forma clara.
+
+
+    Inline
+    Comportamiento: no comienzan en una nueva línea y solo ocupan el espacio necesario para su contenido.
+    Características:
+    - No se puede definir su ancho o altura directamente.
+    - Los elementos se colocan uno al lado del otro en la misma línea, siempre que haya espacio suficiente.
+    - Solo permiten márgenes y rellenos horizontales, no verticales.
+    
+    Inline-block
+    Comportamiento: combinan las características de los elementos block e inline.
+    Características:
+    - Se comportan como elementos inline, en el sentido de que no rompen la línea, es decir, se colocan uno al lado del 
+      otro si hay suficiente espacio.
+    - Sin embargo, como los elementos block, permiten definir el ancho y la altura, y pueden tener márgenes y rellenos 
+      tanto verticales como horizontales.
+    - Ejemplos de elementos: Se puede usar para crear elementos de diseño, como botones o bloques que deben estar alineados 
+      horizontalmente pero con un control de tamaño. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body { /* Elimina los bordes en blanco */
+      margin: 0;
+    }
+    div {
+      background: salmon;
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+    }
+    a {
+      background: skyblue;
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+    }
+    button {
+      background: slateblue;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div>bloque</div> <!--  div es de tipo bloque por tanto le podemos agregar un ancho, alto y borde -->
+  <a href="/">inline</a> <!--  a es de tipo inline por tanto solo aplica margin en horizontal -->
+  <button>inline block</button> <!--  button es de tipo inline-block por tanto le podemos aplicar ancho, alto, pero margin es solo horizontal -->
+</body>
+</html>

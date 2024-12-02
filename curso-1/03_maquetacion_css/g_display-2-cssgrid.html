@@ -1,0 +1,60 @@
+<!--  Otro tipo de display muy usado es flexbox
+      A complete guide Flexbox https://css-tricks.com/snippets/css/a-guide-to-flexbox/ 
+      Flexbox (Flexible Box Layout) es un modelo de diseño en CSS que facilita la distribución y alineación de elementos dentro 
+      de un contenedor, incluso cuando su tamaño es desconocido o dinámico. Fue diseñado para crear layouts más flexibles y complejos 
+      de manera más sencilla y sin tener que recurrir a las propiedades de flotado (float) o posicionamiento absoluto.
+
+      ¿Cómo funciona Flexbox?
+      Flexbox permite organizar los elementos de manera fluida dentro de un contenedor, distribuyendo el espacio disponible 
+      de forma más eficiente y controlada. Es especialmente útil para diseños de una sola dimensión (en filas o columnas).
+
+      Flexbox tiene dos partes clave:
+      1 Contenedor flex: El elemento padre que envuelve a los elementos flexibles. Este contenedor utiliza la propiedad 
+      display: flex o display: inline-flex.
+      2 Ítems flexibles: Los elementos hijos dentro del contenedor, que se comportan según las reglas de Flexbox.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: grid;
+      width: 400px;
+      height: 400px;
+      background: papayawhip;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    .item {
+      background: pink;
+    }
+    .container .item:nth-child(1) {
+      grid-column: 1 / 2;
+    }
+    .container .item:nth-child(2) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+    .container .item:nth-child(3) {
+      grid-column: 3 / 4;
+      grid-row: 3 / 4;
+    }
+    .container .item:nth-child(4) {
+      grid-column: 4 / 5;
+      grid-row: 4 / 5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!--  En el anterior ejemplo vimos como CSS se decidió por el texto azul. 
+  Sin embargo, en css tambien pueden surgir conflictos al aplicar diferentes estilos a un mismo elemento.
+  En CSS, usa la especificidad que es una medida que determina qué reglas se aplican a un elemento cuando 
+  múltiples reglas coinciden con el mismo elemento. Es un concepto fundamental para entender cómo los navegadores 
+  deciden qué estilos aplicar en caso de conflictos entre selectores.-->
+
+<!--Cada selector en CSS tiene un "peso" que se calcula con base en el tipo de selectores que contiene. 
+La especificidad se divide en tres niveles principales:
+
+1 ID (#): Son los selectores más específicos.
+2 Clases (.), atributos ([atributo]), y pseudoclases (:hover): Tienen un peso intermedio.
+3 Selectores de tipo (elemento) y pseudoelementos (::before, ::after): Tienen el peso más bajo.
+
+La especificidad se representa como una tupla de tres números:
+(ID, Clases y pseudoclases, Elementos y pseudoelementos).
+
+| **Selector**            | **Especificidad** |
+|-------------------------|-------------------|
+| `h1`                    | 0, 0, 1           |
+| `.clase`                | 0, 1, 0           |
+| `#id`                   | 1, 0, 0           |
+| `div p`                 | 0, 0, 2           |
+| `#id .clase p`          | 1, 1, 1           |
+| `h1.clase`              | 0, 1, 1           |
+| `*` selector universal  | 0, 0, 0           |
+
+Hay herramientas online que nos permiten calcular el peso de un selector. 
+https://specificity.keegan.st/
+
+
+Consejos para manejar la especificidad
+
+Evita usar demasiados selectores de ID: Los IDs son muy específicos y pueden dificultar el mantenimiento del CSS 
+si los usas en exceso. Es mejor usar clases para mantener la flexibilidad.
+
+No abuses de las reglas en línea: Aunque tienen la mayor especificidad, dificultan la reutilización y limpieza del código.
+
+Usa selectores específicos solo cuando sea necesario: No combines demasiados selectores si no es necesario; mantén 
+tus estilos simples y legibles.
+
+Usa !important solo en casos excepcionales: Esta regla sobrescribe todas las especificidades, pero puede causar 
+problemas si se usa de manera indiscriminada.-->
+
+<!--   A diferencia del ejercicio anterior, ahora el color rojo prevalece sobre el SpringGreen porque el Id #Platzi
+   tiene mayor peso de especificidad que la clase .master-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #platzi {
+      color: red;
+    }
+    .master {
+      color: SpringGreen;
+    }
+  </style>
+</head>
+<body>
+  <div id="platzi" class="master">Platzi</div>
+</body>
+</html>

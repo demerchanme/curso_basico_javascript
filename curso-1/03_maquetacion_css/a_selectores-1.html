@@ -1,0 +1,45 @@
+<!--  Colores disponibles en https://htmlcolorcodes.com/-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <!--  Dentro de la etiqueta style vamos a colocar algunos selectores CSS -->
+
+  <style>
+    * { /* El selector universal en CSS se representa con un asterisco (*) y se aplica a todos los elementos de un documento HTML. 
+      Es una forma de seleccionar todos los elementos dentro de un contenedor o incluso en toda la página para aplicarles un estilo 
+      específico.*/
+      background: papayawhip;
+    }
+    div { /* El selector de tipo en CSS se utiliza para seleccionar todos los elementos de un tipo específico (etiquetas HTML). 
+      Es uno de los selectores más básicos y se usa para aplicar estilos a todas las instancias de un elemento HTML determinado. 
+      Aquí el problema es que estamos aplicando el estilo a todos los div sin distinción.*/
+      background: pink;
+    }
+    .titulo { /* El selector de clase en CSS se usa para aplicar estilos a elementos que comparten la misma clase. Una clase 
+      puede ser asignada a uno o más elementos, lo que permite aplicar el mismo estilo a múltiples partes del documento.
+      Esto solo aplicará a las etiquetas marcadas como <div class="titulo">Hola</div>*/
+      color: blueviolet;
+    }
+    #titulo2 { /* A diferencia del selector tipo clase, el selector de ID en CSS se utiliza para seleccionar un único elemento 
+      con un ID específico. El ID debe ser único dentro de un documento HTML. Solo se puede usar una vez.*/
+      color: brown;
+    }
+    a[href="https://platzi.com/home"] { /* El selector de atributo en CSS se utiliza para seleccionar elementos HTML que poseen 
+      un atributo específico o un valor particular para ese atributo. Este tipo de selector es útil cuando quieres aplicar estilos 
+      a elementos que tienen atributos o valores concretos, sin necesidad de usar clases o ID. */
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="titulo">Hola</div>
+  <div id="titulo2">mundo</div>
+  <a href="https://platzi.com/home">Platzi</a>
+</body>
+</html>

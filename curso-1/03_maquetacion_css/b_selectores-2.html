@@ -1,0 +1,63 @@
+<!--  Selectores combinadores 
+  Los selectores combinadores en CSS son combinaciones de diferentes selectores que permiten seleccionar elementos basados 
+  en su relación jerárquica en el árbol DOM. Los combinadores te ayudan a aplicar estilos a elementos que están relacionados 
+  de alguna manera, como elementos dentro de otros, elementos hermanos, o elementos en un contexto más amplio.
+
+Tipos de combinadores en CSS:
+
+Combinador de descendiente ( )
+Combinador de hijo directo (>)
+Combinador de hermano adyacente (+)
+Combinador de hermano general (~)-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div p {
+      color: Lime;
+    }
+    div > div { /* selector de hijo directo. Se aplica a los div hijos de un div */
+      background: plum;
+    }
+    .es { /* selector de clase. Se aplica a las etiquetas con clase "es" */
+      background: red;
+    }
+    div + section { /* selector de hermano adyancente. Se aplica al section que esté adyacente a un <div>*/ 
+      background: palevioletred;
+    }
+    div ~ p { /*  selector de hermanos. A diferenciq del anterior. Este se aplica a todos los parrafos hermanos de un <div>*/
+      background: powderblue;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div>
+      <p>Platzi</p>
+      <div class="es">Es</div>
+    </div>
+  </div>
+
+  <p>Clase de selectores</p>
+  <p>Clase de selectores</p>
+  
+  <div>
+    Master
+  </div>
+  
+  <section>
+    Es lo mejor
+  </section>
+
+  <section>
+    De lo mejor
+  </section>
+ 
+</body>
+</html>

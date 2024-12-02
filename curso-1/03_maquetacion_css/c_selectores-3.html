@@ -1,0 +1,67 @@
+<!--  https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements -->
+<!--  https://css-tricks.com/pseudo-class-selectors/ -->
+
+<!--  Las pseudoclases son palabras clave que se utilizan en un selector para especificar un estado especial de 
+  un elemento. Se usan para aplicar estilos a elementos cuando cumplen ciertas condiciones o están en un estado 
+  particular, por ejemplo, cuando un usuario pasa el cursor sobre ellos, cuando son el primer hijo, etc. No modifican el contenido.
+  
+  Pseudoclases comunes: Se escriben con :
+  :hover Aplica estilos a un elemento cuando el usuario pasa el cursor sobre él.
+  :focus Aplica estilos a un elemento que está enfocado, como un campo de formulario.
+  :first-child Aplica estilos al primer hijo de un elemento padre.
+  :nth-child(n) Aplica estilos a un hijo específico (o grupo de hijos) dentro de un elemento padre.
+  :not(selector) Selecciona todos los elementos que no coinciden con el selector especificado. -->
+
+<!--  Los pseudoelementos te permiten seleccionar y aplicar estilos a partes específicas de un elemento, 
+  como la primera línea, la primera letra, o contenido generado antes o después del contenido principal del elemento. Si modifican el contenido.
+  
+  Pseudoelementos comunes: Se escriben con ::
+  ::before Inserta contenido antes del contenido real de un elemento.
+  ::after Inserta contenido después del contenido real de un elemento.
+  ::first-line Aplica estilos a la primera línea de texto dentro de un elemento de bloque.
+  ::first-letter Aplica estilos a la primera letra de un elemento de bloque.
+  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p {
+      color: salmon;
+    }
+    p::first-letter { /* con este pseudo elemento, cambiamos color a la primera letra de las etiquetas <p> */
+      color: black;
+    }
+    h1::before { /* con este pseudo elemento, colocamos algo antes del contenido de las etiquetas <h1> */
+      content: "✨";
+    }
+    p::after { /* con este pseudo elemento, colocamos algo despues del contenido de las etiquetas <p> */
+      content: "💅🏼";
+    }
+    p:hover { /* con esta pseudoclase, cambiamos color de la letra al contenido de las etiquetas <p> */
+      color: skyblue;
+    }
+    div p:nth-child(2) { /* con esta pseudoclase, fijamos el color del segundo <p> hijo de un <DIV> */
+      color: violet;
+    }
+    ::placeholder { /* con este pseudo elemento, cambiamos color al texto de nuestro formulario */
+      color: tomato;
+    }
+  </style>
+</head>
+<body>
+  <h1>It's time!</h1>
+  <p>Hola</p>
+  <div>
+    <p>Platzi</p>
+    <p>Master</p>
+    <p>Lo mejor</p>
+  </div>
+  <input type="text" placeholder="name">
+</body>
+</html>
